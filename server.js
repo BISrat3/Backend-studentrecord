@@ -47,7 +47,6 @@ const studentSchema = new mongoose.Schema(
 const Student = mongoose.model('Student', studentSchema)
 
 // Middleware
-
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
