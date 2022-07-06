@@ -10,7 +10,6 @@ const MONGODB_URL = process.env
 require('./config/db.connection')
 
 // require('dotenv').config();
-
 // const db = require('./models')
 // mongoose.connect(MONGODB_URL);
 
