@@ -2,8 +2,6 @@ const express = require('express')
 const mongoose = require ('mongoose') 
 const cors = require('cors');
 const morgan = require('morgan');
-// const models = require('./models')
-// const controllers = require ('./Controllers')
 const app = express()
 const MONGODB_URL = process.env
 
