@@ -3,19 +3,9 @@ const mongoose = require ('mongoose')
 const cors = require('cors');
 const morgan = require('morgan');
 const app = express()
-const MONGODB_URL = process.env
+const MONGODB_URI = process.env
 
 require('./config/db.connection')
-
-// require('dotenv').config();
-// const db = require('./models')
-// mongoose.connect(MONGODB_URL);
-
-// // connecting events
-// mongoose.connection
-// .on('open', () => console.log('you are connected!'))
-// .on('close', () => console.log('you are disconnected!'))
-// .on('error', (error) => console.log(error))
 
 // models
 
@@ -60,6 +50,7 @@ app.get("/", (req,res)=>{
 app.get('/student', async (req,res)=>{
     try{
         res.json(await Student.find({}));
+        console.log(Student)
 
     }
     catch (error){
@@ -70,6 +61,7 @@ app.get('/student', async (req,res)=>{
 app.post("/student", async (req,res) =>{
     try {
         res,json(await Student.create(req.body));
+        res.send(req.body)
     } catch (error){
         res.status(400).json(error);
     }
